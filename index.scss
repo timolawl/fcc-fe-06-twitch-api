@@ -1,0 +1,135 @@
+
+$twitch-color: #7550ba;
+$primary-color: #69e3ff;
+$primary-light: #a5eeff;
+//$primary-dark: #357280;
+$secondary-color: #414042;
+$secondary-light: #8d8c8e;
+$border-color: #e2dbf0;
+$width: 800px;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Istok+Web');
+
+*, :before, :after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  position: inherit;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: "Istok Web";
+  position: relative;
+  background-color: $twitch-color;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-light;
+    &:hover {
+      text-decoration: underline;
+    }
+}
+
+.twitch {
+  width: $width;
+  margin: 2rem auto;
+  
+  &__title {
+    text-transform: uppercase;
+    font-family: Montserrat;
+    background-color: $secondary-color;
+    color: $primary-color;
+    padding: 1rem;
+  }
+  
+  &__contents {
+    display: flex;
+    font-family: Montserrat;
+    background-color: $secondary-color;
+    color: $primary-color;
+    padding: 0 1rem;
+    border-top: 2px solid $border-color;
+  }
+  
+  &__footer {
+    height: 1rem;
+    background-color: $secondary-color;
+    border-top: 2px solid $border-color;
+  }
+  
+  &__stream {
+    border-top: 2px solid $border-color;
+    padding: 0.5rem 1rem;
+
+    display: flex;
+    justify-content: center;
+    background-color: $secondary-light;
+    
+    &--logo {
+     // background-color: $primary-dark;
+      width: 10%;
+      display: flex;
+      align-items: center;
+    }
+    
+    &--name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+      width: 25%;
+    }
+    
+    &--viewcount {
+      width: 12.5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+    }
+    
+    &--status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+      width: 52.5%;
+    }
+  }
+}
+
+[class^='twitch__stream--'] {
+  text-align: center; // this is for when the width of the containing content is large enought hat justify-content does nothing.
+}
+
+[class^='twitch__stream--']:not(:first-child):not(:last-child) {
+  border-right: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.title {
+  &__streamer {
+    width: 35%;
+  }
+  
+  &__viewcount {
+    width: 12.5%;
+  }
+  
+  &__status {
+    width: 52.5%;
+  }
+}
+
+[class^="title__"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
